@@ -1,12 +1,37 @@
 //리스트 렌더링
 
+import type { JSX } from "react";
 
+const products = [
+  {
+    title: "Cabbage",
+    id: 1,
+    isFuruit: false,
+  },
+  {
+    title: "Garlic",
+    id: 2,
+    isFuruit: false,
+  },
+  {
+    title: "Apple",
+    id: 3,
+    isFuruit: true,
+  },
+];
 
-export default function Test3() {
-  return (
-    <div className="flex flex-col min-h-screen bg-gray-100 gap-5">
-      <h1 className="text-3xl text-blue-600 mb-4">Test3</h1>
-      <h1 className="text-xl text-gray-700">hello hello</h1>
-    </div>
-  );
+export default function Test3(): JSX.Element {
+  const listItems = products.map((product) => {
+    return (
+      <li key={product.id} style={{ color: product.isFuruit ? "red" : "blue" }}>
+        {product.title}
+      </li>
+    );
+  });
+
+  // const list = products.map((product) => {
+  //   return <li key={product.id}>{product.title}</li>;
+  // });
+
+  return <ul>{listItems}</ul>;
 }

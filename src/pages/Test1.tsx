@@ -2,12 +2,13 @@
 
 import "./Test1.css";
 import Profile from "../components/ui/Profile";
+import type { JSX } from "react";
 
 type Test1Props = {
   title: string;
 };
 
-export default function Test1({ title }: Test1Props) {
+export default function Test1({ title }: Test1Props): JSX.Element {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 gap-5">
       <h1 className="text-3xl text-blue-600 mb-4">Test1</h1>
